@@ -32,7 +32,7 @@ from config.logging_config import setup_logging
 # ─────────────────────────────────────────────
 GITLAB_URL: str = "http://192.168.42.188:13080"
 BASE_DIR: Path = Path(__file__).resolve().parent.parent
-TOKEN_PATH: Path = BASE_DIR / "config" / "gitlab_token.json"
+TOKENS_PATH: Path = BASE_DIR / "config" / "tokens.json"
 OUT_JSON: Path = BASE_DIR / "raw_data" / "gitlab_export_lines.json"
 
 INCLUDE_EXTS: dict[str, str] = {
@@ -59,7 +59,7 @@ MAX_WORKERS: int = int(os.getenv("MAX_WORKERS", "8"))
 # ─────────────────────────────────────────────
 # Авторизация
 # ─────────────────────────────────────────────
-PRIVATE_TOKEN: str = json.loads(TOKEN_PATH.read_text(encoding="utf-8"))["gitlab_token"]
+PRIVATE_TOKEN: str = json.loads(TOKENS_PATH.read_text(encoding="utf-8"))["gitlab"]["token"]
 gl = gitlab.Gitlab(GITLAB_URL, private_token=PRIVATE_TOKEN, keep_base_url=True)
 gl.auth()
 
@@ -178,22 +178,15 @@ def main() -> None:
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {executor.submit(process_project, pr): pr.id for pr in projects}
         
-        # Принудительный flush для Windows терминалов
         progress_bar = tqdm(
             as_completed(futures), 
             total=len(futures), 
             desc="Projects", 
-            unit="proj",
-            file=sys.stdout
+            unit="proj"
         )
         
         for i, fut in enumerate(progress_bar):
             result.append(fut.result())
-            progress_bar.refresh()  # Принудительное обновление
-            
-            # Дополнительное логирование каждые 10 проектов
-            if (i + 1) % 10 == 0:
-                logger.info(f"Обработано {i + 1}/{len(futures)} проектов")
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
