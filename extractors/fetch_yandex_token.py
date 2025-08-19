@@ -1,12 +1,19 @@
 import requests
+import json
 import sys
 import os
+from pathlib import Path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from config.logging_config import setup_logging
 
 logger = setup_logging(__name__)
 
-TOKEN = 'y0__xDlneKOAxjG8zgggsKE5ROQ8kQL_hrsA9BJs5PDa4vwBdL_hg'
+# Load token from config
+BASE_DIR = Path(__file__).resolve().parent.parent
+CONFIG_PATH = BASE_DIR / 'config' / 'tokens.json'
+with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+    config = json.load(f)
+TOKEN = config['yandex']['token']
 
 def main():
     logger.info("Запуск проверки токена Yandex API")

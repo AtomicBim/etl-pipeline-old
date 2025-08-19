@@ -2,10 +2,15 @@ import os
 import subprocess
 import sys
 import pathlib
+import asyncio
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
 from config.logging_config import setup_logging
 from typing import List, Tuple
+
+# Fix for Windows Proactor event loop warning with ZMQ
+if sys.platform.startswith('win'):
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 BASE_DIR = pathlib.Path(__file__).resolve().parent
 os.environ['ETL_ROOT'] = str(BASE_DIR)

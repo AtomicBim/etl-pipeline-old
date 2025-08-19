@@ -16,10 +16,16 @@ logger = setup_logging(__name__)
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUT_DIR = BASE_DIR / 'config'
 OUT_DIR.mkdir(exist_ok=True)
+CONFIG_PATH = BASE_DIR / 'config' / 'tokens.json'
+
+# Load spreadsheet key from config
+import json
+with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+    config = json.load(f)
+SPREADSHEET_KEY = config['google_sheets']['spreadsheet_keys'][0]['key']
 
 SERVICE_ACCOUNT_FILE = BASE_DIR / 'config' / 'revitmaterials-e79d24766ccd.json' 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SPREADSHEET_KEY = '19ZDWnS0Ft8bLVCbVyHsOatTTzidv55r5Rj7Woi9mNck'
 WORKSHEET_NAME = 'yougile-plugins'
 OUTPUT_FILE = 'yougile-plugins_mapping.csv'
 

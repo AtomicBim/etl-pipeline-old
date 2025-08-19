@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
 import csv
+import json
 from pathlib import Path
 import sys
 import os
@@ -17,6 +18,12 @@ logger = setup_logging(__name__)
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUT_DIR = BASE_DIR / 'raw_data'
 OUT_DIR.mkdir(exist_ok=True)
+CONFIG_PATH = BASE_DIR / 'config' / 'tokens.json'
+
+# Load spreadsheet key from config
+with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+    config = json.load(f)
+SPREADSHEET_KEY = config['google_sheets']['spreadsheet_keys'][1]['key']
 
 def main():
     logger.info("Запуск экспорта данных из Google Sheets (инструкции)")
@@ -28,7 +35,7 @@ def main():
         creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
         ws = (
             gspread.authorize(creds)
-            .open_by_key('1GFxOABxNsPxWWQ9XzeERu90CB850Fp5j9NnH8zD01eQ')
+            .open_by_key(SPREADSHEET_KEY)
             .worksheet('Навыки пользователя')
         )
         

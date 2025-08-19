@@ -11,6 +11,7 @@ from typing import Dict, Iterable, List, Optional
 import requests
 from requests.adapters import HTTPAdapter, Retry
 from pathlib import Path
+import urllib3
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -20,8 +21,12 @@ from config.logging_config import setup_logging
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUT_DIR = BASE_DIR / 'raw_data'
 OUT_PATH = OUT_DIR / 'yougile_export_programming.json'
+CONFIG_PATH = BASE_DIR / 'config' / 'tokens.json'
 
-TOKEN = "Mn0MxS4Sp+BRTXmZG3G3Q3R1+IHVPmXMbvZgrq51QaLCc9h5NxmhJOh0WqUZxqHH"
+# Load token from config
+with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+    config = json.load(f)
+TOKEN = config['yougile']['token']
 
 BASE = "https://yougile.com/api-v2"
 HEADERS = {"Authorization": f"Bearer {TOKEN}"}
@@ -30,6 +35,9 @@ TARGET_PROJECT = "Разработка"
 PAGE_LIMIT = 1000
 
 logger = setup_logging(__name__)
+
+# Suppress SSL warnings
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # ID стикера статуса
 STATUS_STICKER_ID = "86376c27-0d3c-42c8-850a-095fec0006ed"
@@ -48,6 +56,7 @@ STATUS_STATES = {
 # ──────────── сессия HTTP с повторениями ────────────────────────────────
 session = requests.Session()
 session.headers.update(HEADERS)
+session.verify = False  # Suppress SSL verification
 retry_cfg = Retry(
     total=5,
     backoff_factor=1,

@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 import pandas as pd
 from pathlib import Path
+import json
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -12,10 +13,15 @@ logger = setup_logging(__name__)
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUT_DIR = BASE_DIR / 'raw_data'
 OUT_DIR.mkdir(exist_ok=True)
+CONFIG_PATH = BASE_DIR / 'config' / 'tokens.json'
+
+# Load credentials from config
+with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+    config = json.load(f)
 
 # Параметры подключения к базе данных
 DB_USER = 'cdruser'
-DB_PASSWORD = 'user12cdr'
+DB_PASSWORD = config['asterisk_db']['password']
 DB_HOST = '192.168.33.230'
 DB_NAME = 'asteriskcdrdb'
 OUTPUT_FILE = 'asterisk_export_cdr.csv'
