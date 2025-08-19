@@ -33,20 +33,14 @@ def run_py_scripts(scripts_folder: str) -> Tuple[List[str], List[Tuple[str, str]
             logger.info(f'Выполняется {script.name}')
             result = subprocess.run([sys.executable, str(script)], 
                                   check=True, 
-                                  capture_output=True, 
+                                  capture_output=False,  # Позволяем выводу идти напрямую
                                   text=True,
                                   timeout=1200)  # 20 минут timeout
             successful.append(script.name)
             logger.info(f'✓ {script.name} выполнен успешно')
-            
-            # Логируем вывод скрипта если есть
-            if result.stdout.strip():
-                logger.debug(f'Вывод {script.name}: {result.stdout.strip()}')
                 
         except subprocess.CalledProcessError as e:
             error_msg = f"Код возврата: {e.returncode}"
-            if e.stderr:
-                error_msg += f", Ошибка: {e.stderr.strip()}"
             failed.append((script.name, error_msg))
             logger.error(f'✗ Ошибка в {script.name}: {error_msg}')
             
@@ -92,7 +86,14 @@ def run_notebooks_in_order(notebook_names: List[str]) -> Tuple[List[str], List[T
             logger.info(f'Выполняется {nb_file.name}')
             with open(nb_file, encoding='utf-8') as f:
                 nb = nbformat.read(f, as_version=4)
-                ep = ExecutePreprocessor(timeout=1200, kernel_name='python3')  # 20 минут timeout
+                # Настраиваем ExecutePreprocessor для вывода логов
+                ep = ExecutePreprocessor(
+                    timeout=1200, 
+                    kernel_name='python3',
+                    allow_errors=False,
+                    store_widget_state=False,
+                    log_output=True  # Включаем вывод логов
+                )
                 ep.preprocess(nb, {'metadata': {'path': str(nb_file.parent)}})
             
             successful.append(nb_file.name)
