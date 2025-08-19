@@ -1,6 +1,0 @@
-id,name,description
-0,development,Разработка
-1,internal testing,Внутреннее тестирование
-2,external testing,Внешнее тестирование
-3,production,Выдан
-4,archive,Архив
