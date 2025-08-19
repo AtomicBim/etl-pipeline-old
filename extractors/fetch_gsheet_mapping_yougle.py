@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 OUT_DIR = BASE_DIR / 'config'
 OUT_DIR.mkdir(exist_ok=True)
 
-SERVICE_ACCOUNT_FILE = BASE_DIR / 'config' / 'revitmaterials-4c3f80dae9f5.json' 
+SERVICE_ACCOUNT_FILE = BASE_DIR / 'config' / 'revitmaterials-e79d24766ccd.json' 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SPREADSHEET_KEY = '19ZDWnS0Ft8bLVCbVyHsOatTTzidv55r5Rj7Woi9mNck'
 WORKSHEET_NAME = 'yougile-plugins'

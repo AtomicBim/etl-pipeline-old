@@ -17,7 +17,7 @@ OUT_DIR.mkdir(exist_ok=True)
 def main():
     logger.info("Запуск экспорта маппинга GitLab из Google Sheets")
     
-    SERVICE_ACCOUNT_FILE = BASE_DIR / 'config' / 'revitmaterials-4c3f80dae9f5.json'
+    SERVICE_ACCOUNT_FILE = BASE_DIR / 'config' / 'revitmaterials-e79d24766ccd.json'
     SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
     
     try:
