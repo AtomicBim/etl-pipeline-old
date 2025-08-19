@@ -1,0 +1,427 @@
+[
+  {
+    "stickerId": "e7d01758-3f79-4aa0-b160-b2ada71c634f",
+    "stateId": "5513677ac149",
+    "stateName": "Важно/Срочно"
+  },
+  {
+    "stickerId": "e7d01758-3f79-4aa0-b160-b2ada71c634f",
+    "stateId": "2d89a86aef84",
+    "stateName": "Не важно/Срочно"
+  },
+  {
+    "stickerId": "e7d01758-3f79-4aa0-b160-b2ada71c634f",
+    "stateId": "dadf27f67775",
+    "stateName": "Не важно/Не срочно"
+  },
+  {
+    "stickerId": "e7d01758-3f79-4aa0-b160-b2ada71c634f",
+    "stateId": "a228f0253660",
+    "stateName": "Важно/Не срочно"
+  },
+  {
+    "stickerId": "e7d01758-3f79-4aa0-b160-b2ada71c634f",
+    "stateId": "6590a55dc496",
+    "stateName": "Отложено"
+  },
+  {
+    "stickerId": "51553880-ff0c-40fa-8b0a-762866c9e9ed",
+    "stateId": "f9710061802d",
+    "stateName": "Семейство"
+  },
+  {
+    "stickerId": "51553880-ff0c-40fa-8b0a-762866c9e9ed",
+    "stateId": "5016016182c3",
+    "stateName": "Настройка проекта"
+  },
+  {
+    "stickerId": "51553880-ff0c-40fa-8b0a-762866c9e9ed",
+    "stateId": "99674f920560",
+    "stateName": "Проверка модели"
+  },
+  {
+    "stickerId": "51553880-ff0c-40fa-8b0a-762866c9e9ed",
+    "stateId": "a65c6544f081",
+    "stateName": "Экспорт данных"
+  },
+  {
+    "stickerId": "51553880-ff0c-40fa-8b0a-762866c9e9ed",
+    "stateId": "f5bd328b2452",
+    "stateName": "Обучение"
+  },
+  {
+    "stickerId": "51553880-ff0c-40fa-8b0a-762866c9e9ed",
+    "stateId": "7318b8a1abee",
+    "stateName": "Инструкция"
+  },
+  {
+    "stickerId": "20c86030-74c8-4800-88d1-252f81007c3b",
+    "stateId": "32c93c07dd0e",
+    "stateName": "Сложно/Долго"
+  },
+  {
+    "stickerId": "20c86030-74c8-4800-88d1-252f81007c3b",
+    "stateId": "19fa75a53940",
+    "stateName": "Не сложно/Долго"
+  },
+  {
+    "stickerId": "20c86030-74c8-4800-88d1-252f81007c3b",
+    "stateId": "0c90f0cb036e",
+    "stateName": "Сложно/Не долго"
+  },
+  {
+    "stickerId": "20c86030-74c8-4800-88d1-252f81007c3b",
+    "stateId": "2e509c8dbe6f",
+    "stateName": "Не сложно/Не долго"
+  },
+  {
+    "stickerId": "86376c27-0d3c-42c8-850a-095fec0006ed",
+    "stateId": "5ddc1ee55f62",
+    "stateName": "У пользователей"
+  },
+  {
+    "stickerId": "86376c27-0d3c-42c8-850a-095fec0006ed",
+    "stateId": "02ab2db20998",
+    "stateName": "В разработке"
+  },
+  {
+    "stickerId": "86376c27-0d3c-42c8-850a-095fec0006ed",
+    "stateId": "a755f41c689d",
+    "stateName": "В перспективе"
+  },
+  {
+    "stickerId": "86376c27-0d3c-42c8-850a-095fec0006ed",
+    "stateId": "00603206008c",
+    "stateName": "Устаревший"
+  },
+  {
+    "stickerId": "86376c27-0d3c-42c8-850a-095fec0006ed",
+    "stateId": "f00f0c43e3dd",
+    "stateName": "Доработка"
+  },
+  {
+    "stickerId": "86376c27-0d3c-42c8-850a-095fec0006ed",
+    "stateId": "adb006363cde",
+    "stateName": "У координаторов"
+  },
+  {
+    "stickerId": "86376c27-0d3c-42c8-850a-095fec0006ed",
+    "stateId": "e7fc4f24c7a5",
+    "stateName": "У тестовой группы"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "ffc6f4015731",
+    "stateName": "ИКП-039_БСК_4оч"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "6171eaf54c0f",
+    "stateName": "08-12.П_Московская_2оч"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "7f7af4765834",
+    "stateName": "АТОМ-020_Кузнецова-Кировоградская_10оч"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "adc2c1bbd1e5",
+    "stateName": "АТОМ-043_Парина-Амундсена_кв15.5"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "3eff341d741f",
+    "stateName": "048_22_Северный Химмаш"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "75e0318ec900",
+    "stateName": "АТОМ-004_БСК_5 оч_7эт"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "0cdbd0dc062e",
+    "stateName": "ЛЛУ-В1-27-3.0"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "5baa037129f6",
+    "stateName": "АТОМ-022_Ирбитская-Северная_оч.1, эт.2"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "7990829625b2",
+    "stateName": "ИКП-007-00_Просторная_3 очередь"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "ca70a8aae980",
+    "stateName": "ИКП-036_Бабушкина"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "21990040077a",
+    "stateName": "ИКП-044_Щербакова Глобус_Р"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "f5181406dcf8",
+    "stateName": "Школа Вонсовского"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "fc3066a9862b",
+    "stateName": "АТОМ-043_Парина-Амундсена квартал 15.5"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "2f1cacfab02f",
+    "stateName": "АТОМ-002_Суходольская_22уч"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "9ec4ec7a5016",
+    "stateName": "ЛЛУ-В1-17-2.9"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "4e5e8b9ce477",
+    "stateName": "АТОМ-022_Ирбитская-Северная_оч.1, эт.1"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "59c8e763903b",
+    "stateName": "ЛЛУ-В2-10-2.9"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "63a7f09bbe69",
+    "stateName": "Калькулятор"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "f08e990e0c3d",
+    "stateName": "ИКП-007-00_Просторная_3уч"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "73002f0794f5",
+    "stateName": "АТОМ-051_ДОУ-200 Академический 14"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "94450308c889",
+    "stateName": "АТОМ-052_ДОУ-200 Академический 12.2"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "7f38b0f34247",
+    "stateName": "АТОМ-017_БСК_5оч_6этап"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "070895e70dbf",
+    "stateName": "АТОМ-040_Суходольская_23уч"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "089118af507d",
+    "stateName": "АТОМ-053_ФОК Родина"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "ab598c39c108",
+    "stateName": "ИКП-011-00_Оч.8"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "e3c4c4ef2e62",
+    "stateName": "2207_AMT_Opera"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "7862f2a3fa36",
+    "stateName": "АТОМ-041_Кузнецова-Кировградская_Оч.9"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "d050708da132",
+    "stateName": "ИКП-022_Березовая Роща"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "5d012af53a1b",
+    "stateName": "АТОМ-055_Академический 22"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "6eff70185a30",
+    "stateName": "АТОМ-009_Студенческая"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "47590d71ab80",
+    "stateName": "АТОМ-012_Ирбитская-Северная"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "b0e9d9b44296",
+    "stateName": "ИНПРО-001_Пихтовый_1.8"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "2e139051c7d3",
+    "stateName": "АТОМ-073_Школа Арт-Этюд"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "52e01e986ac6",
+    "stateName": "АТОМ-077_Патруши"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "3b62a6546800",
+    "stateName": "АТОМ-050-СОШ Академ.4"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "6469a3a34847",
+    "stateName": "ИКП-029_Кузнецова-Кировградская_6оч"
+  },
+  {
+    "stickerId": "b9fca70c-905c-4d08-93b6-146cb3742c6f",
+    "stateId": "4d4f83137904",
+    "stateName": "АТОМ-079_Академ_Блок3.3"
+  },
+  {
+    "stickerId": "e485b9fb-9fb1-4a8c-b16d-70c330e450e3",
+    "stateId": "3eaaf22937d5",
+    "stateName": "Высокий"
+  },
+  {
+    "stickerId": "e485b9fb-9fb1-4a8c-b16d-70c330e450e3",
+    "stateId": "03495dcadc8b",
+    "stateName": "Низкий"
+  },
+  {
+    "stickerId": "2590de92-53e5-432b-80c2-d308990bef9f",
+    "stateId": "cc1f42f21a32",
+    "stateName": "Высокий"
+  },
+  {
+    "stickerId": "2590de92-53e5-432b-80c2-d308990bef9f",
+    "stateId": "ef55d38bf524",
+    "stateName": "Низкий"
+  },
+  {
+    "stickerId": "2d0e90a6-ad09-4504-8e7c-d514008761b9",
+    "stateId": "8c9b14530a65",
+    "stateName": "ИКП-003-00_Опера"
+  },
+  {
+    "stickerId": "2d0e90a6-ad09-4504-8e7c-d514008761b9",
+    "stateId": "86aa697d23bc",
+    "stateName": "АТОМ-002_Суходольская_22уч"
+  },
+  {
+    "stickerId": "2d0e90a6-ad09-4504-8e7c-d514008761b9",
+    "stateId": "f90e1800e13a",
+    "stateName": "АТОМ-009_Студенческая"
+  },
+  {
+    "stickerId": "2d0e90a6-ad09-4504-8e7c-d514008761b9",
+    "stateId": "bc6b9ece8a60",
+    "stateName": "АТОМ-043_Парина-Амундсена квартал 15.5"
+  },
+  {
+    "stickerId": "2d0e90a6-ad09-4504-8e7c-d514008761b9",
+    "stateId": "39ce328b5167",
+    "stateName": "АТОМ-055_Академический 22"
+  },
+  {
+    "stickerId": "2d0e90a6-ad09-4504-8e7c-d514008761b9",
+    "stateId": "816e29d90e40",
+    "stateName": "АТОМ-057_Пермь Монастырская"
+  },
+  {
+    "stickerId": "2d0e90a6-ad09-4504-8e7c-d514008761b9",
+    "stateId": "a780500ee92c",
+    "stateName": "АТОМ-062_Страна Офис"
+  },
+  {
+    "stickerId": "2d0e90a6-ad09-4504-8e7c-d514008761b9",
+    "stateId": "d4700af41931",
+    "stateName": "Разработка семейств"
+  },
+  {
+    "stickerId": "2d0e90a6-ad09-4504-8e7c-d514008761b9",
+    "stateId": "2ef7e4355b8f",
+    "stateName": "АТОМ-040_Суходольская_23уч"
+  },
+  {
+    "stickerId": "6e0fe4d4-0b4d-4f76-86ba-bcc9d9112479",
+    "stateId": "5d087c28af61",
+    "stateName": "1 уровень сложности"
+  },
+  {
+    "stickerId": "6e0fe4d4-0b4d-4f76-86ba-bcc9d9112479",
+    "stateId": "1798f329da72",
+    "stateName": "2 уровень сложности"
+  },
+  {
+    "stickerId": "6e0fe4d4-0b4d-4f76-86ba-bcc9d9112479",
+    "stateId": "eec5229e900c",
+    "stateName": "3 уровень сложности"
+  },
+  {
+    "stickerId": "0fa18b50-beca-4194-b8c9-fd7bf88769b2",
+    "stateId": "c4690e5a100f",
+    "stateName": "I квартал"
+  },
+  {
+    "stickerId": "0fa18b50-beca-4194-b8c9-fd7bf88769b2",
+    "stateId": "c10573688f03",
+    "stateName": "II квартал"
+  },
+  {
+    "stickerId": "0fa18b50-beca-4194-b8c9-fd7bf88769b2",
+    "stateId": "dee80920d799",
+    "stateName": "III квартал"
+  },
+  {
+    "stickerId": "0fa18b50-beca-4194-b8c9-fd7bf88769b2",
+    "stateId": "8088a98d75a6",
+    "stateName": "IV квартал"
+  },
+  {
+    "stickerId": "ff6e19fe-a1eb-47a9-9656-c6d9d93d02c9",
+    "stateId": "2f8057a0e95f",
+    "stateName": "Шаблон АР"
+  },
+  {
+    "stickerId": "ff6e19fe-a1eb-47a9-9656-c6d9d93d02c9",
+    "stateId": "0dd1cb0f4725",
+    "stateName": "Шаблон КР"
+  },
+  {
+    "stickerId": "ff6e19fe-a1eb-47a9-9656-c6d9d93d02c9",
+    "stateId": "26f78443b1e2",
+    "stateName": "Шаблон КМ"
+  },
+  {
+    "stickerId": "ff6e19fe-a1eb-47a9-9656-c6d9d93d02c9",
+    "stateId": "9e92d4e90d5e",
+    "stateName": "Методическая работа"
+  },
+  {
+    "stickerId": "ff6e19fe-a1eb-47a9-9656-c6d9d93d02c9",
+    "stateId": "0d4de6468227",
+    "stateName": "Разработка ТЗ"
+  },
+  {
+    "stickerId": "ff6e19fe-a1eb-47a9-9656-c6d9d93d02c9",
+    "stateId": "cf5b6655af04",
+    "stateName": "Разработка семейств"
+  }
+]

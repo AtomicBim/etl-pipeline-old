@@ -9,10 +9,15 @@ import json
 import tempfile
 from pathlib import Path
 from typing import Dict, List
+import sys
+import os
 
 import gitlab
 from git import Repo
 from tqdm import tqdm
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from config.logging_config import setup_logging
 
 # ───────────────────────────────────────────────────────────────────────
 # Константы
@@ -28,6 +33,8 @@ BRACE_ONLY_B = {b"{", b"}"}
 
 with open(TOKEN_PATH, encoding="utf-8") as f:
     PRIVATE_TOKEN = json.load(f)["gitlab_token"]
+
+logger = setup_logging(__name__)
 
 gl = gitlab.Gitlab(GITLAB_URL, private_token=PRIVATE_TOKEN, keep_base_url=True)
 gl.auth()  # проверяем токен
@@ -83,31 +90,41 @@ def project_line_count(project: gitlab.v4.objects.Project) -> int:
 # ───────────────────────────────────────────────────────────────────────
 # Основная логика
 # ───────────────────────────────────────────────────────────────────────
-def export_projects() -> None:
-    projects = gl.projects.list(all=True)  # без пагинации
-    result: List[Dict[str, object]] = []
+def main() -> None:
+    logger.info("Запуск экспорта строк кода GitLab проектов (legacy версия)")
+    
+    try:
+        projects = gl.projects.list(all=True)  # без пагинации
+        result: List[Dict[str, object]] = []
+        
+        logger.info(f"Обработка {len(projects)} проектов...")
 
-    for project in tqdm(projects, desc="Сбор метрик", unit="proj"):
-        try:
-            lines = project_line_count(project)
-        except Exception as exc:
-            print(f"⚠️  {project.path_with_namespace}: {exc}")
-            lines = None
+        for project in tqdm(projects, desc="Сбор метрик", unit="proj"):
+            try:
+                lines = project_line_count(project)
+            except Exception as exc:
+                logger.warning(f"{project.path_with_namespace}: {exc}")
+                lines = None
 
-        result.append(
-            {
-                "id": project.id,
-                "name": project.name,
-                "full_name": project.path_with_namespace,
-                "default_branch": project.default_branch,
-                "lines_of_code": lines,
-            }
-        )
+            result.append(
+                {
+                    "id": project.id,
+                    "name": project.name,
+                    "full_name": project.path_with_namespace,
+                    "default_branch": project.default_branch,
+                    "lines_of_code": lines,
+                }
+            )
 
-    out_path = OUT_DIR / "gitlab_export_lines.json"
-    with out_path.open("w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
-    print(f"Сохранено {len(result)} проектов → {out_path}")
+        out_path = OUT_DIR / "gitlab_export_lines.json"
+        with out_path.open("w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+        
+        logger.info(f"Экспорт завершен успешно. Сохранено {len(result)} проектов → {out_path}")
+        
+    except Exception as e:
+        logger.error(f"Ошибка при экспорте GitLab проектов: {e}")
+        raise
 
 if __name__ == "__main__":
-    export_projects()
+    main()

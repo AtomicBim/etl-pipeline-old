@@ -1,14 +1,21 @@
 import psycopg2
 from pathlib import Path
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from config.logging_config import setup_logging
 
+logger = setup_logging(__name__)
+
+# Константы и конфигурация
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUT_DIR = BASE_DIR / 'raw_data'
 OUT_DIR.mkdir(exist_ok=True)
 
-output_path = OUT_DIR / 'tim_export_project_sync.csv'
+OUTPUT_FILE = 'tim_export_project_sync.csv'
 
-# Параметры подключения
-conn_params = {
+# Параметры подключения к PostgreSQL
+CONN_PARAMS = {
     "host": "192.168.42.188",
     "port": 5430,
     "dbname": "pluginsdb",
@@ -16,15 +23,36 @@ conn_params = {
     "password": "Q!w2e3r4"
 }
 
-schema = "projects"
-table = "project_sync"
+SCHEMA = "projects"
+TABLE = "project_sync"
 
-# Сформировать SQL-запрос COPY
-copy_sql = f'COPY "{schema}"."{table}" TO STDOUT WITH CSV HEADER ENCODING \'UTF8\''
+# Функции
 
-# Сохранение
-with psycopg2.connect(**conn_params) as conn, open(output_path, "w", encoding="utf-8") as f:
-    with conn.cursor() as cur:
-        cur.copy_expert(copy_sql, f)
+def export_table_to_csv(output_path):
+    """Экспортирует таблицу PostgreSQL в CSV файл."""
+    copy_sql = f'COPY "{SCHEMA}"."{TABLE}" TO STDOUT WITH CSV HEADER ENCODING \'UTF8\''
+    
+    with psycopg2.connect(**CONN_PARAMS) as conn, open(output_path, "w", encoding="utf-8") as f:
+        with conn.cursor() as cur:
+            cur.copy_expert(copy_sql, f)
 
-print(f"Готово. Таблица {schema}.{table} экспортирована в '{output_path}'")
+def main():
+    """Основная функция для экспорта таблицы project_sync из PostgreSQL."""
+    try:
+        logger.info("Начало экспорта таблицы project_sync из PostgreSQL")
+        
+        output_path = OUT_DIR / OUTPUT_FILE
+        
+        # Подключение и экспорт
+        logger.info(f"Подключение к PostgreSQL и экспорт таблицы {SCHEMA}.{TABLE}...")
+        export_table_to_csv(output_path)
+        
+        logger.info(f"Таблица {SCHEMA}.{TABLE} успешно экспортирована в файл: {output_path}")
+        logger.info("Экспорт данных project_sync завершен успешно")
+        
+    except Exception as e:
+        logger.error(f"Ошибка при экспорте таблицы project_sync: {e}")
+        raise
+
+if __name__ == "__main__":
+    main()
